@@ -45,13 +45,24 @@ class App extends Component {
         // Words that start with "y" use the rule that begin with the constanent "you" = "ouyay".
         // Words that has "y" as a second letter treat it as the first letter as a constanent
       //Example: 
-      //1/5: "Can you help me?" = "Ancay ouyay elphay emay" 
+        //1/5: "Can you help me?" = "Ancay ouyay elphay emay" 
         // 3: "Am I winning?" = "Amyay Iyay inningway?"
         // 2/4: "Playing baseball is fun." = "Ayingplay asebayallbay isyay unfay."
       
-      
-        // your code here!
+      // Psuedo Code:
+      // Find the first vowel in a string and set it to a variable firstVowel
+      // If that current words first index is === vowel return the currentWord with a "ay" to the end 
+      // 
+      // "alpha" = "alphaway"
 
+        // your code here!
+      let firstVowel = vowelsArray[0]
+      if(currentWord[0] === firstVowel) {
+        return `${currentWord}way`
+      }
+      
+      
+      // console.log(firstVowel)
       // Remember: console.log is your friend :)
       
 
