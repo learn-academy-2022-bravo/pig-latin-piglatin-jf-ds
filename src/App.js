@@ -32,11 +32,28 @@ class App extends Component {
         return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
       })
       console.log("vowelsArray:", vowelsArray)
-
-      // your code here!
+      // PigLatin Rules:
+      // 1: Words that begin with a constanent
+            //Move the first letter to the end and suffix "ay"
+      // 2: Words that start with a constanent cluster
+        //Move the constanent cluster for ex: "pl" add suffix "ay"
+      // 3: Words that begin with a vowel
+        //Add "way" to the end
+      // 4: Compound words
+        //Seperate the compound words into individual words. Apply apprioate rule for each word
+      // 5: Special case words
+        // Words that start with "y" use the rule that begin with the constanent "you" = "ouyay".
+        // Words that has "y" as a second letter treat it as the first letter as a constanent
+      //Example: 
+      //1/5: "Can you help me?" = "Ancay ouyay elphay emay" 
+        // 3: "Am I winning?" = "Amyay Iyay inningway?"
+        // 2/4: "Playing baseball is fun." = "Ayingplay asebayallbay isyay unfay."
+      
+      
+        // your code here!
 
       // Remember: console.log is your friend :)
-
+      
 
       // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
       return currentWord
