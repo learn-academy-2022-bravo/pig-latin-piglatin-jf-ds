@@ -36,10 +36,10 @@ class App extends Component {
       // 3: Words that begin with a vowel
       //Add "way" to the end
       // 6: Words that start with "qu" move "qu" to the end and add "ay"
+      // 1: Words that begin with a constanent
+      //Move the first letter to the end and suffix "ay"
       
       // Things to do: 
-      // 1: Words that begin with a constanent
-            //Move the first letter to the end and suffix "ay"
       // 2: Words that start with a constanent cluster
             //Move the constanent cluster for ex: "pl" add suffix "ay"
             // 4: Compound words
@@ -63,12 +63,13 @@ class App extends Component {
       // If the first letter is a "q" and the first vowel is a "u"
       //       // currentWords.substring(0)
       // Rebuild the string 
-// Yellow
-// Color
 
-      // 
+      // Create a variable to find the index "y" in a word
+      // By using our firstHalf and lastHalf variable we can plug "y" into our substring to get our return
       
-      // 
+      // By realizing a patern in the code, we were able to reuse earlier methods to trap for remaining letters  
+
+
         // your code here!
       let firstVowel = vowelsArray[0]
 
@@ -87,6 +88,10 @@ class App extends Component {
         let firstHalf = currentWord.substring(0, y)
         let lastHalf = currentWord.substring(y)
         return `${lastHalf}${firstHalf}ay`
+      } else {
+        let firstHalf = currentWord.substring(0, locationOfFirstVowel)
+        let lastHalf = currentWord.substring(locationOfFirstVowel)
+        return `${lastHalf}${firstHalf}ay`
       }
 
 
@@ -95,7 +100,7 @@ class App extends Component {
       
 
       // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
-      return currentWord
+      // return currentWord
     })
 
 
