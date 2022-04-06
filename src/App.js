@@ -33,35 +33,54 @@ class App extends Component {
       })
       console.log("vowelsArray:", vowelsArray)
       // PigLatin Rules:
+      // 3: Words that begin with a vowel
+      //Add "way" to the end
+      
+      // Things to do: 
       // 1: Words that begin with a constanent
             //Move the first letter to the end and suffix "ay"
       // 2: Words that start with a constanent cluster
-        //Move the constanent cluster for ex: "pl" add suffix "ay"
-      // 3: Words that begin with a vowel
-        //Add "way" to the end
-      // 4: Compound words
-        //Seperate the compound words into individual words. Apply apprioate rule for each word
-      // 5: Special case words
-        // Words that start with "y" use the rule that begin with the constanent "you" = "ouyay".
-        // Words that has "y" as a second letter treat it as the first letter as a constanent
-      //Example: 
-        //1/5: "Can you help me?" = "Ancay ouyay elphay emay" 
-        // 3: "Am I winning?" = "Amyay Iyay inningway?"
-        // 2/4: "Playing baseball is fun." = "Ayingplay asebayallbay isyay unfay."
+            //Move the constanent cluster for ex: "pl" add suffix "ay"
+            // 4: Compound words
+              //Seperate the compound words into individual words. Apply apprioate rule for each word
+            // 5: Special case words
+              // Words that start with "y" use the rule that begin with the constanent "you" = "ouyay".
+              // Words that has "y" as a second letter treat it as the first letter as a constanent
+            // 6: Words that start with "qu" move "qu" to the end and add "ay"
+            //Example: 
+              //1/5: "Can you help me?" = "Ancay ouyay elphay emay" 
+              // 3: "Am I winning?" = "Amyay Iyay inningway?"
+              // 2/4: "Playing baseball is fun." = "Ayingplay asebayallbay isyay unfay."
+
+
       
       // Psuedo Code:
       // Find the first vowel in a string and set it to a variable firstVowel
       // If that current words first index is === vowel return the currentWord with a "ay" to the end 
-      // 
-      // "alpha" = "alphaway"
-
+      
+      // Create a variable called qFinder to hold "q" 
+      // Create variable locationOfFirstVowel to equal currentWord.indexOf(firstVowel)
+      // If the first letter is a "q" and the first vowel is a "u"
+      //       // currentWords.substring(0)
+      // Rebuild the string 
+      
+      // Else if
         // your code here!
       let firstVowel = vowelsArray[0]
+
+      let locationOfFirstVowel = currentWord.indexOf(firstVowel)
+      let qFinder = currentWord[locationOfFirstVowel - 1]
+
       if(currentWord[0] === firstVowel) {
         return `${currentWord}way`
+      } else if(qFinder === "q" && firstVowel === "u") {
+        let firstHalf = currentWord.substring(0, locationOfFirstVowel + 1)
+        let lastHalf = currentWord.substring(locationOfFirstVowel + 1)
+        console.log(lastHalf)
+        return `${lastHalf}${firstHalf}ay`
       }
-      
-      
+
+
       // console.log(firstVowel)
       // Remember: console.log is your friend :)
       
