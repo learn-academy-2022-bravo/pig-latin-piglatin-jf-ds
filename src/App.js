@@ -35,6 +35,7 @@ class App extends Component {
       // PigLatin Rules:
       // 3: Words that begin with a vowel
       //Add "way" to the end
+      // 6: Words that start with "qu" move "qu" to the end and add "ay"
       
       // Things to do: 
       // 1: Words that begin with a constanent
@@ -46,7 +47,6 @@ class App extends Component {
             // 5: Special case words
               // Words that start with "y" use the rule that begin with the constanent "you" = "ouyay".
               // Words that has "y" as a second letter treat it as the first letter as a constanent
-            // 6: Words that start with "qu" move "qu" to the end and add "ay"
             //Example: 
               //1/5: "Can you help me?" = "Ancay ouyay elphay emay" 
               // 3: "Am I winning?" = "Amyay Iyay inningway?"
@@ -63,8 +63,12 @@ class App extends Component {
       // If the first letter is a "q" and the first vowel is a "u"
       //       // currentWords.substring(0)
       // Rebuild the string 
+// Yellow
+// Color
+
+      // 
       
-      // Else if
+      // 
         // your code here!
       let firstVowel = vowelsArray[0]
 
@@ -77,6 +81,11 @@ class App extends Component {
         let firstHalf = currentWord.substring(0, locationOfFirstVowel + 1)
         let lastHalf = currentWord.substring(locationOfFirstVowel + 1)
         console.log(lastHalf)
+        return `${lastHalf}${firstHalf}ay`
+      } else if(locationOfFirstVowel === -1) {
+        let y = currentWord.indexOf("y")
+        let firstHalf = currentWord.substring(0, y)
+        let lastHalf = currentWord.substring(y)
         return `${lastHalf}${firstHalf}ay`
       }
 
